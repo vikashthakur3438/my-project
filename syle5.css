@@ -1,0 +1,26 @@
+div {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#d1 {
+    background-color: red;
+}
+
+#d2 {
+    visibility:hidden;
+    background-color: yellow;
+}
+
+#d3 {
+    display: none;
+    background-color: green;
+}
+
+#d4 {
+    
+    background-color:rgb(255,0, 0,0.5);
+}

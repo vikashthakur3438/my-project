@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background-color:#e3e6e6;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:60px;
+    width:100%;
+    background-color:#0f1111;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+}
+
+/* LOGO */
+
+.nav-logo{
+    height:50px;
+    width:120px;
+}
+
+.logo{
+    background-image:url("logo1.png");
+    background-size:cover;
+    background-position:center;
+
+    height:50px;
+    width:100%;
+}
+
+/* BORDER */
+
+.border{
+    border:2px solid transparent;
+    padding:5px;
+}
+
+.border:hover{
+    border:2px solid white;
+}
+
+/* ================= ADDRESS ================= */
+
+.add-first{
+    color:#cccccc;
+    font-size:0.75rem;
+    margin-left:15px;
+}
+
+.add-second{
+    font-size:0.9rem;
+    margin-left:3px;
+    font-weight:bold;
+}
+
+.add-icon{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+/* ================= SEARCH ================= */
+
+.nav-search{
+    display:flex;
+    justify-content:space-evenly;
+
+    width:620px;
+    height:40px;
+
+    border-radius:5px;
+    overflow:hidden;
+
+    background-color:pink;
+}
+
+.nav-search:hover{
+    border:3px solid orange;
+}
+
+/* SELECT */
+
+.search-select{
+    width:50px;
+    border:none;
+    background:#f3f3f3;
+    text-align:center;
+}
+
+/* INPUT */
+
+.search-input{
+    width:100%;
+    border:none;
+
+    font-size:1rem;
+    padding-left:10px;
+
+    outline:none;
+}
+
+/* ICON */
+
+.search-icon{
+    width:50px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#febd68;
+
+    font-size:1.2rem;
+    color:black;
+}
+
+/* ================= TEXT ================= */
+
+span{
+    font-size:0.7rem;
+}
+
+.nav-second{
+    font-size:0.85rem;
+    font-weight:700;
+}
+
+/* ================= CART ================= */
+
+.nav-cart i{
+    font-size:25px;
+}
+
+.nav-cart{
+    font-size:15px;
+    font-weight:700;
+}
+
+/* ================= PANEL ================= */
+
+.panel{
+    height:40px;
+    background-color:#222f3d;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+}
+
+.panel-all{
+    font-weight:700;
+}
+
+.panel-options{
+    width:70%;
+
+    display:flex;
+    align-items:center;
+}
+
+.panel-options p{
+    margin-left:15px;
+}
+
+.panel-deals{
+    font-size:0.9rem;
+    font-weight:700;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section{
+    background-image:url("image3.jpg");
+
+    height:400px;
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+/* HERO MESSAGE */
+
+.hero-msg{
+    background:white;
+    color:black;
+
+    height:40px;
+    width:90%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:0.9rem;
+
+    margin-bottom:25px;
+}
+
+/* ================= SHOP SECTION ================= */
+
+.shop-section{
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+
+    margin-top:-120px;
+}
+
+/* BOX */
+
+.box{
+    height:380px;
+    width:23%;
+
+    background:white;
+
+    padding:20px;
+    margin-top:15px;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+.box h2{
+    margin-bottom:15px;
+}
+
+/* PRODUCT IMAGE */
+
+.box-img{
+    width:100%;
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+    .box{
+        width:45%;
+    }
+
+    .nav-search{
+        width:400px;
+    }
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-wrap:wrap;
+        height:auto;
+
+        padding:10px;
+    }
+
+    .nav-search{
+        width:100%;
+        margin-top:10px;
+    }
+
+    .box{
+        width:90%;
+    }
+}
+.shop-section{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:space-evenly;
+
+    margin-top:-120px;
+
+    padding:20px;
+}
+
+/* BOX */
+
+.box{
+    width:23%;
+    height:380px;
+
+    background:white;
+
+    margin-top:20px;
+    padding:20px;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+#box1{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+    gap:10px;
+}
+
+/* .left-panel{
+    width:60%;
+    background:#b7b5ff;
+    text-align:center;
+    padding:40px;
+} */
+ .left-panel{
+    width:60%;
+    background:#b7b5ff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+    text-align:center;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.left-panel img{
+    width:500px;
+    max-width:100%;
+}
+
+.left-panel h1{
+    text-align:left;
+}
+
+.left-panel h2{
+    margin-top:20px;
+}
+
+.left-panel p{
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* .login-card{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:50px;
+    gap:15px;
+} */
+.login-card{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; /* center ki jagah */
+    padding:50px;
+    padding-top:220px; /* jitna neeche chahiye */
+    gap:15px;
+}
+
+.login-card i{
+    font-size:60px;
+    color:#6c63ff;
+}
+
+/* .login-card select,
+.login-card input,
+.login-card button{
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:10px;
+} */
+ .login-card input,
+.login-card select,
+.login-card button{
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:20px;
+    transition:0.3s;
+    margin-top: 20px;
+}
+
+.login-card input:hover,
+.login-card select:hover{
+    background-color:#f0f0ff;
+    border-color:#6c63ff;
+}
+
+.login-card button:hover{
+    background-color:#5448ff;
+}
+
+.login-card button{
+    background:#6c63ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+
+}
+.login-card{
+    color:black;
+    margin-top: 10px;
+}
+.login-card{
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+.login-card{
+    background-image:url("Mobile login-rafiki - Copy.svg");
+    background-repeat: no-repeat;
+    background-color: rgb(120, 120, 233);
+}
+.login-card input{
+    margin-top:7px;
+}
+.login-card h2{
+    position: relative;
+    top: -209px;
+    margin-right: 30px;
+}

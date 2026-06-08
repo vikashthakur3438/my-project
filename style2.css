@@ -1,0 +1,38 @@
+/* *{ */
+    /* font-family: 'Times New Roman'; */
+/* } */
+h1 {
+    text-transform: capitalize;
+    height: 50px;
+    width: 200px;
+    background-color: aqua;
+   /* border-width: 2px;
+    border-style: dotted;*/
+     border: 2px dotted yellow;
+    text-align: center;
+    
+
+}
+
+/* #outer { */
+    /* font-size: 25px; */
+/* } */
+
+/* #inner { */
+    /* font-size: 10px; */
+/* } */
+
+div {
+    height: 50px;
+    width: 100px;
+    background-color: blueviolet;
+    border-width: 2px;
+    border-style: solid;
+    /* align-items: center; */
+    /* text-align: end; */
+    /* border-radius: 15px;*/
+   /* padding:10px 2px 5px 4px;*/
+    margin:10px ;
+    margin:10px 11px 13px 14px;
+
+}
