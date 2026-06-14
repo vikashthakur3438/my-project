@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="paritice.css"
+    <link rel="stylesheet" href="paritice.css">
+    <link rel="html" href="dashboard.html">
+
 </head>
 <body>
     <div class="container">
@@ -36,16 +38,16 @@
             <option>Quality</option>
             <option>MIS</option>
         </select>
-
-        <input type="text" placeholder="Enter your username">
-
-        <input type="password" placeholder="Enter your password">
-
-        <button>Sign In</button>
+        <input type="text" id="username" placeholder="Enter your username">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="login()">Sign In</button>
 
     </div>
 
 </div>
-    
+<footer id="foot">
+    <button id="mode">change mode</button>
+</footer>    
+<script src="paritice.js"></script>
 </body>
 </html>

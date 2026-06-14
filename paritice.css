@@ -36,6 +36,7 @@
 
 .left-panel h1{
     text-align:left;
+    color: black;
 }
 
 .left-panel h2{
@@ -126,4 +127,44 @@
     position: relative;
     top: -209px;
     margin-right: 30px;
+}
+
+/* footer */
+#foot{
+    height: 30px;
+    background-color: rgb(155, 144, 232);
+    color: azure;
+    border-radius: 10%;
+}
+
+#mode{
+    background-color:rgb(155, 144, 232);
+    color: rgb(17, 16, 16);
+    height: 27px;
+    width: 90px;
+    border: none;
+    cursor: pointer;
+
+    position: fixed;   /* important */
+    right: 20px;
+    bottom: 1px;
+    border-radius: 8%;      /* niche black area me */
+}
+#mode:hover{
+    background-color: whitesmoke;
+    color:black;
+
+}
+
+
+/* change mode */
+
+.dark{
+    background-color: rgb(155, 144, 232);
+    color: white;
+}
+
+.light{
+    background-color: rgb(50, 79, 225);
+    color: rgb(28, 27, 27);
 }
