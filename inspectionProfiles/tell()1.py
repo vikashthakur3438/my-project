@@ -1,0 +1,18 @@
+with open("knv.data","r")as fp:
+    print("initnally ,fp points to :",fp.tell())
+    filedata=fp.read(7)
+    print("filedata=",filedata)
+    print("now fp ponits to:{}",format(fp.tell()))
+print("-------------------------------------------")
+with open("knr10.data","r")as fc:
+    print("initnally ,fp points to :",format(fc.tell()))
+    filedata=fc.read(4)
+    print("filedata1",filedata)
+    print("now fc points to:{}",format(fc.tell()))
+    print("---------------------------------------------")
+    filedata=fc.read(8)
+    print("filedata=",filedata)
+    print("now fc points to :{}".format(fc.tell()))
+    print("-----------------------------------------")
+    filedata=fc.read(2)
+    print("now fc points to:{}",format(fc.tell()))

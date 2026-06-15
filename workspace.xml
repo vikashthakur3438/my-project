@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="674f0984-4d1a-45c6-9109-89e7499bd0a1" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3BmvALbZC8tHBt0seX2urqB6fG0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.#se.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ATMOPERATION.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AtmMainpog.executor&quot;: &quot;Run&quot;,
+    &quot;Python.VH.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aop.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aopmenu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.builtins.executor&quot;: &quot;Run&quot;,
+    &quot;Python.certe.executor&quot;: &quot;Run&quot;,
+    &quot;Python.content1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createafloder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createfolderhierarchy.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csv.file.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csvdict.reader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csvfile2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csvwrite.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dictdatastor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dictjson.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dictobj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dicttostr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.divison.executor&quot;: &quot;Run&quot;,
+    &quot;Python.divisondemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.drop.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ds.executor&quot;: &quot;Run&quot;,
+    &quot;Python.empdemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.empmenu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.execption,py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exection,2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exection,3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fatchcone1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fatchmany1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formula.3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.import staement1syntax.executor&quot;: &quot;Run&quot;,
+    &quot;Python.json.executor&quot;: &quot;Run&quot;,
+    &quot;Python.json1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.jsondict.executor&quot;: &quot;Run&quot;,
+    &quot;Python.khjkui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.listoffolder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mode 1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mode.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nam2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.namevalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python.namevaliddemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.open as w.executor&quot;: &quot;Run&quot;,
+    &quot;Python.open x.executor&quot;: &quot;Run&quot;,
+    &quot;Python.operation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.outer or inner mode.executor&quot;: &quot;Run&quot;,
+    &quot;Python.package.executor&quot;: &quot;Run&quot;,
+    &quot;Python.partice.executor&quot;: &quot;Run&quot;,
+    &quot;Python.partice1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.photo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.picking data.1py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.qreyddl1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quartall.executor&quot;: &quot;Run&quot;,
+    &quot;Python.query4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.querycerate1.p.executor&quot;: &quot;Run&quot;,
+    &quot;Python.queryddl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quryalter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.readlines.executor&quot;: &quot;Run&quot;,
+    &quot;Python.relod.executor&quot;: &quot;Run&quot;,
+    &quot;Python.removefloder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.removehierarchy.executor&quot;: &quot;Run&quot;,
+    &quot;Python.renamefolder.executor&quot;: &quot;Run&quot;,
+    &quot;Python.se1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.se2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.seek().executor&quot;: &quot;Run&quot;,
+    &quot;Python.shares.executor&quot;: &quot;Run&quot;,
+    &quot;Python.syntax.3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.syntax2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tell()1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ti.executor&quot;: &quot;Run&quot;,
+    &quot;Python.topdemo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.unpickle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.welcome.executor&quot;: &quot;Run&quot;,
+    &quot;Python.with open a.executor&quot;: &quot;Run&quot;,
+    &quot;Python.word for mode.executor&quot;: &quot;Run&quot;,
+    &quot;Python.word mode.executor&quot;: &quot;Run&quot;,
+    &quot;Python.writeliness().executor&quot;: &quot;Run&quot;,
+    &quot;Python.writer ().executor&quot;: &quot;Run&quot;,
+    &quot;Python.writer open.executor&quot;: &quot;Run&quot;,
+    &quot;Python.writer.() (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.writer.().executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Usersvikash of functions\PythonProject1.py\.idea\.venv" />
+      <recent name="C:\Usersvikash of functions\PythonProject1.py\.idea" />
+      <recent name="C:\Usersvikash of functions\PythonProject1.py" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.certe">
+    <configuration name="VH" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1.py" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VH.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="certe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1.py" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/certe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fatchmany1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1.py" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fatchmany1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mode 1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1.py" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mode 1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="quartall" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1.py" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quartall.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.certe" />
+        <item itemvalue="Python.VH" />
+        <item itemvalue="Python.quartall" />
+        <item itemvalue="Python.mode 1" />
+        <item itemvalue="Python.fatchmany1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-dfff61a61320-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="674f0984-4d1a-45c6-9109-89e7499bd0a1" name="Changes" comment="" />
+      <created>1775106916010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775106916010</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/execption,py.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.idea/inspectionProfiles/tell()1.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fatchmany1.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
