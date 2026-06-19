@@ -1,0 +1,3 @@
+ESL_HOST = "127.0.0.1"
+ESL_PORT = "8021"
+ESL_PASSWORD = "ClueCon"

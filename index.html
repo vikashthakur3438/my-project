@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FreeSWITCH Live Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f4f9; }
+        #log { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-height: 200px; }
+        .event-entry { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .status { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Live FreeSWITCH Call Monitor</h2>
+    <p>Status: <span id="status" class="status">Connecting...</span></p>
+    
+    <div id="log">
+        <h3>Live Events:</h3>
+    </div>
+
+    <script>
+        // Connect to the Python WebSocket server
+        const socket = new WebSocket('ws://localhost:8765');
+
+        const statusSpan = document.getElementById('status');
+        const logDiv = document.getElementById('log');
+
+        socket.onopen = () => {
+            statusSpan.innerText = "Connected to Python Backend";
+            statusSpan.style.color = "green";
+        };
+
+        socket.onclose = () => {
+            statusSpan.innerText = "Disconnected";
+            statusSpan.style.color = "red";
+        };
+
+        // Listen for messages from Python
+        socket.onmessage = (event) => {
+            const data = json.parse(event.data);
+            
+            // Create a new HTML element to display the event
+            const entry = document.createElement('div');
+            entry.className = 'event-entry';
+            entry.innerHTML = `<strong>Event:</strong> ${data.event} | 
+                               <strong>From:</strong> ${data.caller_number || 'Unknown'} 
+                               <strong>To:</strong> ${data.callee_number || 'Unknown'}`;
+            
+            // Append to our dashboard
+            logDiv.appendChild(entry);
+        };
+    </script>
+</body>
+</html>
