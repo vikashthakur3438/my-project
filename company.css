@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+#name{
+    height: 70px;
+    background-color: #1591DC;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+#logo{
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Search Input */
+input[type="text"]{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button{
+    background-color: #F08804;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    background-color: #d97706;
+}
+
+.login-btn{
+    background-color: #0B2545;
+}
+
+/* Main Section */
+main{
+    background-color: #F5F7FA;
+    min-height: 80vh;
+    text-align: center;
+    padding-top: 40px;
+}
+
+h1{
+    color: #0B2545;
+    margin-bottom: 30px;
+}
+
+/* Form */
+.form-container{
+    width: 350px;
+    background: white;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.form-container input,
+.form-container select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer{
+    height: 70px;
+    background-color: #0B2545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    color: white;
+}
+.form-container a{
+    color: blue;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 15px;
+}

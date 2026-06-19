@@ -1,0 +1,37 @@
+#box{
+    background-color: aqua;
+    /* color: rgb(192, 49, 49); */
+}
+
+/* h1,h2,h3{ */
+    color: orange;
+/* } */
+
+.heading{
+    color:yellowgreen;
+}
+
+/* button{ */
+    /* background-color: azure; */
+/* } */
+/* #h1{ */
+    /* text-align: center; */
+    /* text-decoration:underline red; */
+/* } */
+p{
+    text-align: center;
+}
+
+#h1{
+    font-weight:200;
+}
+/* #p1{ */
+    /* font-family: 'Courier New',Arial, Helvetica, sans-serif; */
+/* } */
+#two{
+    font-size:100px;
+}
+#one{
+    line-height:5px;
+    text-transform: capitalize;
+}

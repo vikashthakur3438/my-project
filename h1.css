@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#foot{
+    height: 30px;
+    background-color: darkgray;
+    color: azure;
+}
+#foot:hover{
+    background-color:rgb(121, 121, 181);
+}
+#mode{
+    background-color: rgb(247, 240, 240);
+    color: rgb(17, 16, 16);
+    height: 30px;
+    width: 90px;
+    border: none;
+    cursor: pointer;
+
+    position: fixed;   /* important */
+    right: 20px;
+    bottom: 1px;
+    border-radius: 8%;      /* niche black area me */
+}
+#mode:hover{
+    background-color: white;
+
+}
+
+/* change mode */
+
+.dark{
+    background-color: rgb(71, 68, 68);
+    color: white;
+}
+
+.light{
+    background-color: white;
+    color: rgb(28, 27, 27);
+}
