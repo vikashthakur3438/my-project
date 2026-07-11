@@ -1,12 +1,15 @@
-// =====================================
-// ELEMENTS
-// =====================================
+/* ===============================
+   ELEMENTS
+================================*/
 
 
-const home = document.getElementById("homePage");
-const insert = document.getElementById("insertPage");
-const history = document.getElementById("historyPage");
+const homePage = document.getElementById("homePage");
+const insertPage = document.getElementById("insertPage");
+const historyPage = document.getElementById("historyPage");
 
+
+const menuBtn = document.getElementById("menuBtn");
+const menuDropdown = document.getElementById("menuDropdown");
 
 
 const homeMenu = document.getElementById("homeMenu");
@@ -15,20 +18,10 @@ const historyMenu = document.getElementById("historyMenu");
 
 
 
-// MENU
-
-const menuBtn = document.getElementById("menuBtn");
-const menuDropdown = document.getElementById("menuDropdown");
-
-
-
-
-// PHONE
-
 const openBtn = document.getElementById("openBtn");
-const dialog = document.getElementById("phoneDialog");
-
+const phoneDialog = document.getElementById("phoneDialog");
 const closeBtn = document.getElementById("closeBtn");
+
 
 const numberInput = document.getElementById("number");
 
@@ -37,62 +30,46 @@ const callBtn = document.getElementById("callBtn");
 const endBtn = document.getElementById("endBtn");
 
 
+const whatsappCard = document.getElementById("whatsappCard");
+const emailCard = document.getElementById("emailCard");
 
 
-// CHART
 
 let callChart = null;
 
-
-
-let callStartTime = null;
+let startTime = null;
 
 
 
 
 
-// =====================================
-// MENU BUTTON
-// =====================================
+/* ===============================
+   MENU
+================================*/
 
 
 if(menuBtn){
 
-
-menuBtn.onclick=function(e){
-
-
-    e.stopPropagation();
-
+menuBtn.onclick=function(){
 
     menuDropdown.classList.toggle("show");
 
-
 };
-
-
 
 }
 
 
 
-// CLOSE MENU OUTSIDE CLICK
-
-
 document.addEventListener("click",function(e){
 
-
     if(
-        menuDropdown &&
-        !menuDropdown.contains(e.target) &&
-        !menuBtn.contains(e.target)
-
+        !menuBtn.contains(e.target) &&
+        !menuDropdown.contains(e.target)
     ){
 
         menuDropdown.classList.remove("show");
 
     }
-
 
 });
 
@@ -101,47 +78,19 @@ document.addEventListener("click",function(e){
 
 
 
-// =====================================
-// PAGE CHANGE
-// =====================================
-
+/* ===============================
+   PAGE SWITCH
+================================*/
 
 
 function showPage(page){
 
+    homePage.style.display="none";
+    insertPage.style.display="none";
+    historyPage.style.display="none";
 
 
-    if(home)
-    home.style.display="none";
-
-
-    if(insert)
-    insert.style.display="none";
-
-
-    if(history)
-    history.style.display="none";
-
-
-
-
-
-    if(page){
-
-        page.style.display="block";
-
-
-        page.style.animation="none";
-
-
-        setTimeout(()=>{
-
-            page.style.animation="show .5s ease";
-
-        },20);
-
-
-    }
+    page.style.display="block";
 
 
 }
@@ -150,28 +99,20 @@ function showPage(page){
 
 
 
-
-
-// =====================================
-// MENU PAGE CLICK
-// =====================================
-
+/* ===============================
+   MENU LINKS
+================================*/
 
 
 if(homeMenu){
 
-
 homeMenu.onclick=function(e){
 
+    e.preventDefault();
 
-e.preventDefault();
+    showPage(homePage);
 
-
-showPage(home);
-
-
-menuDropdown.classList.remove("show");
-
+    menuDropdown.classList.remove("show");
 
 };
 
@@ -181,47 +122,32 @@ menuDropdown.classList.remove("show");
 
 if(insertMenu){
 
-
 insertMenu.onclick=function(e){
 
+    e.preventDefault();
 
-e.preventDefault();
+    showPage(insertPage);
 
-
-showPage(insert);
-
-
-menuDropdown.classList.remove("show");
-
+    menuDropdown.classList.remove("show");
 
 };
 
-
 }
-
-
 
 
 
 
 if(historyMenu){
 
-
 historyMenu.onclick=function(e){
 
+    e.preventDefault();
 
-e.preventDefault();
+    showPage(historyPage);
 
-
-showPage(history);
-
-
-menuDropdown.classList.remove("show");
-
+    menuDropdown.classList.remove("show");
 
 };
-
-
 
 }
 
@@ -231,135 +157,73 @@ menuDropdown.classList.remove("show");
 
 
 
-// DEFAULT PAGE
-
-
-showPage(home);
-
-
-
-
-
-
-
-
-
-// =====================================
-// PHONE DIAL POPUP
-// =====================================
-
+/* ===============================
+   DIAL PAD
+================================*/
 
 
 if(openBtn){
 
-
 openBtn.onclick=function(){
 
-
-    dialog.style.display="flex";
-
+    phoneDialog.style.display="flex";
 
 };
 
-
 }
-
-
-
-
 
 
 
 if(closeBtn){
 
-
 closeBtn.onclick=function(){
 
+    phoneDialog.style.display="none";
 
-    dialog.style.display="none";
+};
 
+}
+
+
+
+
+window.onclick=function(e){
+
+    if(e.target===phoneDialog){
+
+        phoneDialog.style.display="none";
+
+    }
 
 };
 
 
-}
 
 
 
 
-
-window.addEventListener("click",function(e){
-
-
-    if(e.target===dialog){
-
-
-        dialog.style.display="none";
-
-
-    }
-
-
-});
-
-
-
-
-
-
-
-document.addEventListener("keydown",function(e){
-
-
-if(e.key==="Escape"){
-
-
-    dialog.style.display="none";
-
-
-}
-
-
-
-});
-
-
-
-
-
-
-
-// =====================================
-// NUMBER PAD
-// =====================================
-
+/* ===============================
+   NUMBER BUTTON
+================================*/
 
 
 function addNumber(num){
 
-
     if(numberInput.value.length < 15){
-
 
         numberInput.value += num;
 
-
     }
 
-
 }
-
-
 
 
 
 
 function deleteNumber(){
 
-
     numberInput.value =
     numberInput.value.slice(0,-1);
-
 
 }
 
@@ -369,19 +233,15 @@ function deleteNumber(){
 
 
 
-
-// =====================================
-// CALL START
-// =====================================
-
+/* ===============================
+   CALL SYSTEM
+================================*/
 
 
 if(callBtn){
 
 
-
 callBtn.onclick=function(){
-
 
 
     if(numberInput.value===""){
@@ -395,18 +255,17 @@ callBtn.onclick=function(){
 
 
 
-    callStartTime=new Date();
+    startTime=new Date();
 
 
 
     alert(
-        "Calling : "+numberInput.value
+        "Calling "+numberInput.value
     );
 
 
 
 };
-
 
 
 }
@@ -416,28 +275,22 @@ callBtn.onclick=function(){
 
 
 
-
-
-
-// =====================================
-// END CALL
-// =====================================
-
+/* ===============================
+   END CALL
+================================*/
 
 
 if(endBtn){
-
 
 
 endBtn.onclick=function(){
 
 
 
-    if(numberInput.value===""){
+    if(!startTime){
 
 
         alert("No active call");
-
 
         return;
 
@@ -446,47 +299,34 @@ endBtn.onclick=function(){
 
 
 
-
-
     let endTime=new Date();
-
-
 
 
 
     let duration =
     Math.floor(
-        (endTime-callStartTime)/1000
+        (endTime-startTime)/1000
     );
-
-
 
 
 
     addHistory(
-
         numberInput.value,
-
-        callStartTime.toLocaleTimeString(),
-
+        startTime.toLocaleTimeString(),
         endTime.toLocaleTimeString(),
-
         duration+" sec",
-
         "Answered"
-
     );
-
-
 
 
 
     alert("Call Ended");
 
 
-
     numberInput.value="";
 
+
+    startTime=null;
 
 
 };
@@ -500,17 +340,12 @@ endBtn.onclick=function(){
 
 
 
-
-
-
-// =====================================
-// ADD HISTORY TABLE
-// =====================================
-
+/* ===============================
+   HISTORY TABLE
+================================*/
 
 
 function addHistory(phone,start,end,duration,status){
-
 
 
 const table =
@@ -526,9 +361,7 @@ return;
 
 
 
-
 let row=document.createElement("tr");
-
 
 
 
@@ -542,7 +375,12 @@ row.innerHTML=`
 
 <td>${duration}</td>
 
-<td>${status}</td>
+<td>
+<i class="fa-solid fa-circle-check"
+style="color:green">
+</i>
+${status}
+</td>
 
 `;
 
@@ -561,20 +399,73 @@ table.appendChild(row);
 
 
 
+/* ===============================
+   WHATSAPP OPEN
+================================*/
 
 
-// =====================================
-// CHART
-// =====================================
+if(whatsappCard){
 
+
+whatsappCard.ondblclick=function(){
+
+
+window.open(
+"https://web.whatsapp.com/",
+"_blank"
+);
+
+
+};
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   EMAIL OPEN
+================================*/
+
+
+if(emailCard){
+
+
+emailCard.ondblclick=function(){
+
+
+window.open(
+"https://mail.google.com/",
+"_blank"
+);
+
+
+};
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   CHART
+================================*/
 
 
 function createChart(){
 
 
-
-const canvas =
-document.getElementById("callChart");
+const canvas=document.getElementById("callChart");
 
 
 
@@ -583,7 +474,6 @@ if(!canvas){
 return;
 
 }
-
 
 
 
@@ -598,12 +488,9 @@ callChart.destroy();
 
 
 
-callChart = new Chart(canvas,{
-
-
+callChart=new Chart(canvas,{
 
 type:"line",
-
 
 
 data:{
@@ -623,46 +510,46 @@ labels:[
 
 
 
-
 datasets:[{
 
 
 label:"Today's Calls",
 
 
+data:[
 
-data:[5,8,10,7,12,15,20],
+5,
+8,
+10,
+7,
+12,
+15,
+20
+
+],
 
 
 
 borderColor:"#20c9e8",
 
 
-
 backgroundColor:
 "rgba(32,201,232,.25)",
-
 
 
 fill:true,
 
 
-
 tension:.4,
-
 
 
 pointRadius:5
 
 
-
 }]
 
 
-
 },
-
-
 
 
 
@@ -675,17 +562,10 @@ responsive:true,
 maintainAspectRatio:false,
 
 
-
-plugins:{
-
-
-legend:{
+animation:{
 
 
-display:true
-
-
-}
+duration:2000
 
 
 },
@@ -715,15 +595,10 @@ beginAtZero:true
 });
 
 
-
-
 }
 
 
 
 
-
-
-// LOAD CHART
 
 createChart();

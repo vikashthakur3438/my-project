@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>Claritel.ai Dashboard</title>
 
@@ -18,92 +20,117 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
 </head>
+
 
 
 <body>
 
 
+
 <!-- ================= NAVBAR ================= -->
+
 
 <nav class="navbar">
 
 
-    <!-- MENU BUTTON LEFT -->
-    <button id="menuBtn" class="menu-btn">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+<button id="menuBtn" class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
 
 
 
-    <!-- LOGO -->
-    <div class="logo">
+<div class="logo">
 
-        <h2>Claritel.ai</h2>
+<h2>Claritel.ai</h2>
 
-    </div>
-
-
-
-
-
-    <!-- MENU DROPDOWN -->
-
-    <div class="menu-dropdown" id="menuDropdown">
-
-
-        <a href="#" id="homeMenu">
-            <i class="fa-solid fa-house"></i>
-            Home
-        </a>
-
-
-
-        <a href="#" id="insertMenu">
-            <i class="fa-solid fa-user-plus"></i>
-            Insert Contact
-        </a>
+</div>
 
 
 
 
-        <a href="#" id="historyMenu">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            Call History
-        </a>
+
+
+<!-- SIDE MENU -->
+
+
+<div class="menu-dropdown" id="menuDropdown">
+
+
+<a href="#" id="homeMenu">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
 
 
 
+<a href="#" id="insertMenu">
 
-        <a href="#">
-            <i class="fa-solid fa-user"></i>
-            Profile
-        </a>
+<i class="fa-solid fa-user-plus"></i>
 
+Insert Contact
 
-
-        <a href="#">
-            <i class="fa-solid fa-gear"></i>
-            Settings
-        </a>
+</a>
 
 
 
-        <hr>
+<a href="#" id="historyMenu">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Call History
+
+</a>
 
 
 
-        <a href="#">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Logout
-        </a>
+<a href="#">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
 
 
-    </div>
 
+<a href="#">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+
+
+<hr>
+
+
+
+<a href="#">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+
+
+</div>
 
 
 </nav>
+
+
+
 
 
 
@@ -121,8 +148,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 
-
 <div class="cards">
+
+
 
 
 
@@ -131,34 +159,52 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <div class="card blue">
 
+
 <h3>
+
 <i class="fa-solid fa-phone"></i>
+
 Inbound Calls
+
 </h3>
 
 
 <div class="status">
-<i class="fa-solid fa-phone call-icon"></i>
+
+<i class="fa-solid fa-phone"></i>
+
 <span>Calls</span>
+
 <b>0</b>
+
 </div>
 
 
 <div class="status">
-<i class="fa-solid fa-circle-check answer-icon"></i>
+
+<i class="fa-solid fa-circle-check"></i>
+
 <span>Answered</span>
+
 <b>0</b>
+
 </div>
 
 
 <div class="status">
-<i class="fa-solid fa-circle-xmark drop-icon"></i>
+
+<i class="fa-solid fa-circle-xmark"></i>
+
 <span>Dropped</span>
+
 <b>0</b>
+
 </div>
 
 
 </div>
+
+
 
 
 
@@ -170,34 +216,56 @@ Inbound Calls
 
 <div class="card red">
 
+
 <h3>
+
 <i class="fa-solid fa-phone-volume"></i>
+
 Outbound Calls
+
 </h3>
 
 
 <div class="status">
+
 <i class="fa-solid fa-phone"></i>
+
 <span>Calls</span>
+
 <b>1</b>
+
 </div>
 
 
+
 <div class="status">
+
 <i class="fa-solid fa-circle-check"></i>
+
 <span>Answered</span>
+
 <b>1</b>
+
 </div>
+
 
 
 <div class="status">
+
 <i class="fa-solid fa-circle-xmark"></i>
+
 <span>Dropped</span>
+
 <b>0</b>
+
 </div>
 
 
 </div>
+
+
+
+
 
 
 
@@ -207,36 +275,56 @@ Outbound Calls
 <!-- EMAIL -->
 
 
-<div class="card orange">
+<div class="card orange" id="emailCard">
+
 
 <h3>
+
 <i class="fa-solid fa-envelope"></i>
+
 Email
+
 </h3>
 
 
+
 <div class="status">
-<i class="fa-solid fa-tag"></i>
+
+<i class="fa-solid fa-envelope"></i>
+
 <span>Total</span>
+
 <b>0</b>
+
 </div>
 
 
+
 <div class="status">
+
 <i class="fa-solid fa-envelope-open"></i>
+
 <span>Opened</span>
+
 <b>0</b>
+
 </div>
+
 
 
 <div class="status">
+
 <i class="fa-solid fa-circle-check"></i>
+
 <span>Closed</span>
+
 <b>0</b>
+
 </div>
 
 
 </div>
+
 
 
 
@@ -248,7 +336,7 @@ Email
 <!-- WHATSAPP -->
 
 
-<div class="card green whatsapp-card" id="whatsappCard">
+<div class="card green" id="whatsappCard">
 
 
 <h3>
@@ -261,15 +349,17 @@ WhatsApp
 
 
 
+
 <div class="status">
 
-<i class="fa-solid fa-tag"></i>
+<i class="fa-solid fa-message"></i>
 
 <span>Total</span>
 
 <b>0</b>
 
 </div>
+
 
 
 
@@ -282,6 +372,7 @@ WhatsApp
 <b>0</b>
 
 </div>
+
 
 
 
@@ -302,6 +393,7 @@ WhatsApp
 
 
 
+
 </div>
 
 
@@ -309,7 +401,10 @@ WhatsApp
 
 
 
-<!-- LOWER SECTION -->
+
+
+
+<!-- ================= LOWER ================= -->
 
 
 <div class="bottom">
@@ -321,45 +416,59 @@ WhatsApp
 
 <div class="summary-title">
 
+
 <i class="fa-solid fa-clipboard-list"></i>
 
 <h3>Login Summary</h3>
 
+
 </div>
 
 
 
+
 <div class="summary-row">
+
+<i class="fa-solid fa-clock"></i>
+
 <span>IDLE TIME</span>
+
 <b>00:06:02</b>
+
 </div>
 
 
+
+
 <div class="summary-row">
+
+<i class="fa-solid fa-user"></i>
+
 <span>TALK TIME</span>
+
 <b>00:01:22</b>
+
 </div>
 
 
-<div class="summary-row">
-<span>HOLD TIME</span>
-<b>00:00:00</b>
-</div>
+
 
 
 <div class="summary-row">
+
+<i class="fa-solid fa-phone"></i>
+
 <span>WRAP TIME</span>
+
 <b>00:00:00</b>
+
+</div>
+
+
+
 </div>
 
 
-<div class="summary-row">
-<span>BREAK TIME</span>
-<b>00:06:14</b>
-</div>
-
-
-</div>
 
 
 
@@ -367,8 +476,11 @@ WhatsApp
 
 <div class="chart-box">
 
+
 <h3>
+
 Today's Calls
+
 </h3>
 
 
@@ -385,6 +497,11 @@ Today's Calls
 
 
 
+
+
+<!-- PHONE BUTTON -->
+
+
 <button class="floating-call" id="openBtn">
 
 <i class="fa-solid fa-phone"></i>
@@ -392,7 +509,9 @@ Today's Calls
 </button>
 
 
+
 </div>
+
 
 
 
@@ -407,20 +526,16 @@ Today's Calls
 <div class="insert-page" id="insertPage" style="display:none;">
 
 
-<h2>
-Insert Contact
-</h2>
+<h2>Insert Contact</h2>
 
 
-<input placeholder="Name">
+<input type="text" placeholder="Name">
 
 
-<input placeholder="Phone Number">
+<input type="text" placeholder="Phone Number">
 
 
-<button>
-Save
-</button>
+<button>Save</button>
 
 
 </div>
@@ -431,38 +546,41 @@ Save
 
 
 
-<!-- ================= HISTORY ================= -->
+
+
+<!-- ================= HISTORY PAGE ================= -->
 
 
 <div class="history-page" id="historyPage" style="display:none;">
 
+
 <h2>Call History</h2>
+
 
 
 <table>
 
+
 <tr>
+
 <th>Phone</th>
+
 <th>Start</th>
+
 <th>End</th>
+
 <th>Duration</th>
+
 <th>Status</th>
-</tr>
-
-
-<tr>
-
-<td>9876543210</td>
-<td>10:10 AM</td>
-<td>10:15 AM</td>
-<td>5 Min</td>
-<td>Answered</td>
 
 </tr>
+
 
 
 </table>
 
+
+
 </div>
 
 
@@ -470,83 +588,132 @@ Save
 
 
 
-<!-- ================= WHATSAPP WINDOW ================= -->
 
 
-<div class="whatsapp-window" id="whatsappWindow">
+
+<!-- ================= EMAIL PAGE ================= -->
 
 
-<div class="whatsapp-header">
+<div class="email-page" id="emailPage" style="display:none;">
 
-<h3>
+
+<h2>
+
+<i class="fa-solid fa-envelope"></i>
+
+Email Details
+
+</h2>
+
+
+
+<div class="email-box">
+
+
+<div>
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Total Email</h3>
+
+<b>0</b>
+
+</div>
+
+
+
+<div>
+
+<i class="fa-solid fa-envelope-open"></i>
+
+<h3>Opened</h3>
+
+<b>0</b>
+
+</div>
+
+
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h3>Closed</h3>
+
+<b>0</b>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= WHATSAPP PAGE ================= -->
+
+
+<div class="whatsapp-page" id="whatsappPage" style="display:none;">
+
+
+
+<h2>
 
 <i class="fa-brands fa-whatsapp"></i>
 
-WhatsApp
+WhatsApp Details
 
-</h3>
-
-
-<button id="closeWhatsapp">
-
-<i class="fa-solid fa-xmark"></i>
-
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="whatsapp-body">
-
-
-<div class="chat-list">
-
-
-<div class="chat-item">
-
-<i class="fa-solid fa-user"></i>
-
-<div>
-
-<b>Customer 1</b>
-
-<p>Hello</p>
-
-</div>
-
-</div>
-
-
-
-<div class="chat-item">
-
-<i class="fa-solid fa-user"></i>
-
-<div>
-
-<b>Customer 2</b>
-
-<p>Need help</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="chat-screen">
-
-<h2>
-Select Chat
 </h2>
+
+
+
+
+<div class="whatsapp-box">
+
+
+
+<div>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>Total Messages</h3>
+
+<b>0</b>
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-solid fa-envelope-open"></i>
+
+<h3>Opened</h3>
+
+<b>0</b>
+
+</div>
+
+
+
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h3>Closed</h3>
+
+<b>0</b>
 
 </div>
 
@@ -583,6 +750,7 @@ Dial Pad
 </h2>
 
 
+
 <input id="number" readonly>
 
 
@@ -592,19 +760,30 @@ Dial Pad
 
 
 <button onclick="addNumber('1')">1</button>
+
 <button onclick="addNumber('2')">2</button>
+
 <button onclick="addNumber('3')">3</button>
 
+
 <button onclick="addNumber('4')">4</button>
+
 <button onclick="addNumber('5')">5</button>
+
 <button onclick="addNumber('6')">6</button>
 
+
 <button onclick="addNumber('7')">7</button>
+
 <button onclick="addNumber('8')">8</button>
+
 <button onclick="addNumber('9')">9</button>
 
+
 <button onclick="addNumber('*')">*</button>
+
 <button onclick="addNumber('0')">0</button>
+
 <button onclick="addNumber('#')">#</button>
 
 
@@ -612,25 +791,51 @@ Dial Pad
 
 
 
+
+
 <div class="phone-buttons">
 
 
 <button id="callBtn" class="call-btn">
+
+<i class="fa-solid fa-phone"></i>
+
 Call
+
 </button>
+
+
 
 
 <button id="endBtn" class="end-btn">
+
+<i class="fa-solid fa-phone-slash"></i>
+
 End
+
 </button>
 
 
+
+
+<button onclick="deleteNumber()" class="delete-btn">
+
+<i class="fa-solid fa-delete-left"></i>
+
+</button>
+
+
+
 </div>
+
+
 
 
 
 <button id="closeBtn" class="close-btn">
+
 Close
+
 </button>
 
 
@@ -639,6 +844,9 @@ Close
 
 
 </div>
+
+
+
 
 
 
@@ -648,5 +856,6 @@ Close
 
 
 </body>
+
 
 </html>
