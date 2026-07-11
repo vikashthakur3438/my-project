@@ -1,30 +1,1226 @@
-ul{
-    background-color: rgb(61, 16, 225);
-    display: flex;
-    justify-content:space-evenly;
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+
+
+/* ================= NAVBAR ================= */
+.navbar{
+
+    height:80px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    gap:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+
+    position:relative;
 
 }
-a{
-    text-decoration: none;
-    color:black;
-}
-li{
-    background-color:rgb(192, 160, 160);
-    list-style-type: none;
-}
-.outer{
-    height: 600px;
-    width: 600px;
-    background-color: rgb(180, 180, 236);
-    border-radius:10px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+/* MENU BUTTON */
+
+.menu-btn{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#20c9e8;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
 
 }
-.inner{
-    height: 300px;
-    width: 300px;
-    background-color: rgb(11, 244, 244);
-    border-radius: 20px;
+
+
+
+.menu-btn:hover{
+
+    background:#159bb5;
+
+}
+
+
+
+
+
+/* LOGO */
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.logo img{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+
+
+.logo h2{
+
+    color:#162447;
+
+    font-size:28px;
+
+}
+
+
+
+
+
+
+
+/* DROPDOWN */
+
+.menu-dropdown{
+
+
+    position:absolute;
+
+
+    top:75px;
+
+
+    left:35px;
+
+
+    width:240px;
+
+
+    background:white;
+
+
+    border-radius:12px;
+
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+
+    display:none;
+
+
+    z-index:999;
+
+
+}
+
+
+
+.menu-dropdown.show{
+
+    display:block;
+
+}
+
+
+
+.menu-dropdown a{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    padding:15px 20px;
+
+
+    text-decoration:none;
+
+
+    color:#333;
+
+
+}
+
+
+
+.menu-dropdown a:hover{
+
+
+    background:#eefaff;
+
+    color:#20c9e8;
+
+}
+
+
+.menu-dropdown hr{
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+
+/* ================= MENU BUTTON ================= */
+
+
+.menu-box{
+
+    position:relative;
+
+}
+
+
+
+.menu-btn{
+
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#c9dade;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+
+.menu-btn:hover{
+
+    background:#159bb5;
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+/* ================= SIDE MENU ================= */
+
+
+.menu-dropdown{
+
+
+    position:fixed;
+
+
+    top:75px;
+
+
+    right:0;
+
+
+    width:270px;
+
+
+    height:calc(100vh - 75px);
+
+
+    background:white;
+
+
+    box-shadow:-5px 0 20px rgba(0,0,0,.15);
+
+
+    display:none;
+
+
+    z-index:2000;
+
+
+    animation:menuOpen .3s ease;
+
+
+}
+
+
+
+.menu-dropdown.show{
+
+    display:block;
+
+}
+
+
+
+@keyframes menuOpen{
+
+
+from{
+
+transform:translateX(100%);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:translateX(0);
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+.menu-dropdown a{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px 25px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+.menu-dropdown a:hover{
+
+    background:#eefaff;
+
+    color:#20c9e8;
+
+}
+
+
+.menu-dropdown i{
+
+    width:25px;
+
+}
+
+
+
+
+.menu-dropdown hr{
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+.history-page{
+
+    display:block;
+
+    padding:30px;
+
+}
+
+
+
+.history-page table{
+
+    width:100%;
+
+    background:white;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+
+
+.history-page th{
+
+    background:#162447;
+
+    color:white;
+
+}
+
+
+
+.history-page td,
+.history-page th{
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+
+.history-page tr:hover{
+
+    background:#eefaff;
+
+}
+
+
+
+
+
+/* ================= DASHBOARD ================= */
+
+
+.dashboard{
+
+    padding:30px;
+
+    animation:show .5s ease;
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+.cards{
+
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+
+}
+
+
+
+
+
+.card{
+
+
+background:white;
+
+padding:18px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+transition:.3s;
+
+border-top:5px solid transparent;
+
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-7px);
+
+}
+
+
+
+
+.blue{
+
+border-color:#22c8e8;
+
+}
+
+
+
+.red{
+
+border-color:#e74c3c;
+
+}
+
+
+
+.orange{
+
+border-color:#ff9f43;
+
+}
+
+
+
+.green{
+
+border-color:#2ecc71;
+
+}
+
+
+
+.whatsapp-card{
+
+cursor:pointer;
+
+}
+
+
+
+
+.card h3{
+
+
+text-align:center;
+
+font-size:16px;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.card h3 i{
+
+margin-right:8px;
+
+}
+
+
+
+
+
+/* ================= STATUS ================= */
+
+
+.status{
+
+
+display:flex;
+
+align-items:center;
+
+height:38px;
+
+border-bottom:1px solid #eee;
+
+}
+
+
+
+.status i{
+
+width:35px;
+
+}
+
+
+
+.status span{
+
+flex:1;
+
+color:#555;
+
+}
+
+
+
+.status b{
+
+font-size:14px;
+
+}
+
+
+
+
+
+/* ================= LOWER AREA ================= */
+
+
+.bottom{
+
+
+display:grid;
+
+grid-template-columns:350px 1fr;
+
+gap:25px;
+
+margin-top:30px;
+
+
+}
+
+
+
+
+.summary{
+
+
+background:white;
+
+border-radius:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+overflow:hidden;
+
+
+}
+
+
+
+.summary-title{
+
+
+height:50px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+border-top:3px solid #20c9e8;
+
+
+}
+
+
+
+.summary-title i{
+
+color:#20c9e8;
+
+}
+
+
+
+.summary-row{
+
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 15px;
+
+border-bottom:1px solid #eee;
+
+
+}
+
+
+.summary-row span{
+
+flex:1;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+
+
+
+
+/* ================= GRAPH ================= */
+
+
+.chart-box{
+
+
+background:white;
+
+padding:20px;
+
+height:330px;
+
+border-radius:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+
+}
+
+
+.chart-box canvas{
+
+width:100%!important;
+
+height:260px!important;
+
+}
+
+
+
+
+
+/* ================= FLOAT CALL ================= */
+
+
+.floating-call{
+
+
+position:fixed;
+
+right:35px;
+
+bottom:35px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+border:none;
+
+background:#20c9e8;
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+
+}
+
+
+
+.floating-call:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+
+/* ================= WHATSAPP WINDOW ================= */
+
+
+.whatsapp-window{
+
+
+position:fixed;
+
+
+top:90px;
+
+
+right:30px;
+
+
+width:700px;
+
+
+height:500px;
+
+
+background:white;
+
+
+border-radius:15px;
+
+
+display:none;
+
+
+overflow:hidden;
+
+
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+
+z-index:3000;
+
+
+}
+
+
+
+.whatsapp-header{
+
+
+height:60px;
+
+background:#25D366;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 20px;
+
+
+}
+
+
+
+.whatsapp-header button{
+
+
+background:none;
+
+border:none;
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
+
+
+}
+
+
+
+
+.whatsapp-body{
+
+
+display:flex;
+
+height:440px;
+
+
+}
+
+
+
+.chat-list{
+
+
+width:250px;
+
+border-right:1px solid #ddd;
+
+
+}
+
+
+
+.chat-item{
+
+
+padding:18px;
+
+display:flex;
+
+gap:15px;
+
+border-bottom:1px solid #eee;
+
+cursor:pointer;
+
+
+}
+
+
+
+.chat-item:hover{
+
+background:#eee;
+
+}
+
+
+
+
+.chat-screen{
+
+
+flex:1;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#777;
+
+
+}
+
+
+
+
+
+
+
+/* ================= DIAL PAD ================= */
+
+/* ================= SMALL DIAL PAD ================= */
+
+
+.dialog{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2000;
+
+}
+
+
+
+.phone{
+
+
+    width:280px;          /* smaller width */
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    animation:popup .3s;
+
+
+}
+
+
+
+.phone h2{
+
+    font-size:18px;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+.phone input{
+
+
+    width:100%;
+
+    height:40px;
+
+    padding:8px;
+
+    font-size:18px;
+
+    text-align:center;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+
+}
+
+
+
+
+
+.keypad{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:8px;
+
+    margin:15px 0;
+
+
+}
+
+
+
+
+.keypad button{
+
+
+    width:45px;
+
+    height:45px;
+
+    margin:auto;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    background:#eeeeee;
+
+
+}
+
+
+
+.keypad button:hover{
+
+
+    background:#20c9e8;
+
+    color:white;
+
+
+}
+
+
+
+
+
+.phone-buttons{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+
+}
+
+
+
+
+.call-btn,
+.end-btn,
+.delete-btn{
+
+
+    width:45px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+
+}
+
+
+
+.call-btn{
+
+    background:#2ecc71;
+
+}
+
+
+
+.end-btn{
+
+    background:#e74c3c;
+
+}
+
+
+
+.delete-btn{
+
+    background:#f39c12;
+
+}
+
+
+
+
+.close-btn{
+
+
+    width:100%;
+
+    height:35px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#34495e;
+
+    color:white;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:1000px){
+
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.bottom{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.whatsapp-window{
+
+width:95%;
+
+right:2.5%;
+
+}
+
+
 }

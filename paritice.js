@@ -36,7 +36,7 @@ function login() {
     if(username !== "" && password !== ""){
 
         // dashboard open hoga
-        window.location.href = "dashboard.html";
+        window.location.href = "particeset.html";
 
     }
     else{

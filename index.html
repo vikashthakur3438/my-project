@@ -1,67 +1,665 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>FreeSWITCH Live Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f4f9; }
-        #log { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-height: 200px; }
-        .event-entry { border-bottom: 1px solid #eee; padding: 10px 0; }
-        .status { color: green; font-weight: bold; }
-    </style>
+
+<meta charset="UTF-8">
+<title>FreeSWITCH WebRTC Phone</title>
+
+<script src="https://cdn.jsdelivr.net/npm/jssip@3.10.0/dist/jssip.min.js"></script>
+
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f1f3f6;
+    padding:30px;
+}
+
+.container{
+    width:500px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 15px #ccc;
+}
+
+input{
+    width:95%;
+    padding:12px;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+
+button{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    border:0;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+
+.call{
+    background:#28a745;
+    color:white;
+}
+
+
+.hangup{
+    background:#dc3545;
+    color:white;
+    display:none;
+}
+
+
+#log{
+
+    margin-top:20px;
+    background:white;
+    padding:15px;
+    min-height:150px;
+
+}
+
+
+.green{
+    color:green;
+}
+
+.red{
+    color:red;
+}
+
+.orange{
+    color:orange;
+}
+
+
+</style>
+
 </head>
+
+
 <body>
 
-    <h2>Live FreeSWITCH Call Monitor</h2>
-    <p>Status: <span id="status" class="status">Connecting...</span></p>
-    
-    <div id="log">
-        <h3>Live Events:</h3>
-    </div>
 
-    <script>
-        // Connect to the Python WebSocket server
-        const socket = new WebSocket('ws://localhost:8765');
+<div class="container">
 
-        const statusSpan = document.getElementById('status');
-        const logDiv = document.getElementById('log');
 
-        socket.onopen = () => {
-            statusSpan.innerText = "Connected to Python Backend";
-            statusSpan.style.color = "green";
-        };
+<h2>
+FreeSWITCH Browser Phone
+</h2>
 
-        socket.onclose = () => {
-            statusSpan.innerText = "Disconnected";
-            statusSpan.style.color = "red";
-        };
 
-        // Listen for messages from Python
-        socket.onmessage = (event) => {
-            const data = json.parse(event.data);
-            
-            // Create a new HTML element to display the event
-            const entry = document.createElement('div');
-            entry.className = 'event-entry';
-            entry.innerHTML = `<strong>Event:</strong> ${data.event} | 
-                               <strong>From:</strong> ${data.caller_number || 'Unknown'} 
-                               <strong>To:</strong> ${data.callee_number || 'Unknown'}`;
-            
-            // Append to our dashboard
-            logDiv.appendChild(entry);
-        };
-    </script>
+<div class="card">
+
+
+<input 
+id="number"
+value="1001"
+placeholder="Extension">
+
+
+<button 
+class="call"
+onclick="callUser()">
+
+Call
+
+</button>
+
+
+<button 
+id="hangup"
+class="hangup"
+onclick="hangup()">
+
+Hang Up
+
+</button>
+
+
+<p>
+Status:
+<span id="status">
+Starting...
+</span>
+</p>
+
+
+</div>
+
+
+<div id="log">
+
+<h3>Events</h3>
+
+</div>
+
+
+
+<audio id="remoteAudio" autoplay></audio>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+// ==========================
+// FREESWITCH SETTINGS
+// ==========================
+
+
+const FS_IP = "103.177.31.232";
+
+const WSS_PORT = "7443";
+
+
+const EXTENSION = "1000";
+
+const PASSWORD =
+"YourSecurePassword123!";
+
+
+
+
+// ==========================
+// VARIABLES
+// ==========================
+
+
+let ua = null;
+
+let session = null;
+
+
+
+const status =
+document.getElementById("status");
+
+
+const log =
+document.getElementById("log");
+
+
+const audio =
+document.getElementById("remoteAudio");
+
+
+
+
+// ==========================
+// LOG
+// ==========================
+
+
+function addLog(msg)
+{
+
+let p=document.createElement("p");
+
+p.innerHTML=msg;
+
+log.appendChild(p);
+
+}
+
+
+
+// ==========================
+// STATUS
+// ==========================
+
+
+function setStatus(msg,color)
+{
+
+status.innerHTML=msg;
+
+status.className=color;
+
+}
+
+
+
+
+// ==========================
+// CONNECT WEBSOCKET LOGGER
+// ==========================
+
+
+let backend;
+
+
+try{
+
+
+backend =
+new WebSocket(
+"ws://localhost:8765"
+);
+
+
+
+backend.onopen=function(){
+
+addLog(
+"Backend websocket connected"
+);
+
+};
+
+
+backend.onmessage=function(e){
+
+addLog(
+e.data
+);
+
+};
+
+
+}
+catch(e)
+{
+
+console.log(e);
+
+}
+
+
+
+
+// ==========================
+// START SIP
+// ==========================
+
+
+function startSIP(){
+
+
+console.log(
+"JsSIP:",
+JsSIP.version
+);
+
+
+
+let socket =
+new JsSIP.WebSocketInterface(
+`wss://${FS_IP}:${WSS_PORT}`
+);
+
+
+
+let config={
+
+
+sockets:[
+socket
+],
+
+
+uri:
+`sip:${EXTENSION}@${FS_IP}`,
+
+
+password:
+PASSWORD,
+
+
+register:true,
+
+
+session_timers:false
+
+
+};
+
+
+
+ua =
+new JsSIP.UA(config);
+
+
+
+
+
+ua.on(
+"connected",
+()=>{
+
+setStatus(
+"SIP websocket connected",
+"green"
+);
+
+addLog(
+"WebSocket connected"
+);
+
+});
+
+
+
+
+
+ua.on(
+"registered",
+()=>{
+
+
+setStatus(
+"Registered "+EXTENSION,
+"green"
+);
+
+
+addLog(
+"SIP Registration OK"
+);
+
+
+});
+
+
+
+
+
+ua.on(
+"registrationFailed",
+(e)=>{
+
+
+setStatus(
+"Registration Failed",
+"red"
+);
+
+
+addLog(
+"REGISTER ERROR : "+e.cause
+);
+
+
+
+});
+
+
+
+
+
+
+ua.on(
+"newRTCSession",
+function(data){
+
+
+session =
+data.session;
+
+
+
+addLog(
+"RTC Session Created"
+);
+
+
+
+session.on(
+"peerconnection",
+function(e){
+
+
+
+e.peerconnection.ontrack =
+function(event){
+
+
+if(event.track.kind=="audio")
+{
+
+
+audio.srcObject =
+event.streams[0];
+
+
+addLog(
+"Remote audio received"
+);
+
+
+}
+
+
+};
+
+
+
+});
+
+
+
+session.on(
+"ended",
+function(){
+
+document.getElementById(
+"hangup"
+).style.display="none";
+
+
+addLog(
+"Call ended"
+);
+
+
+});
+
+
+
+session.on(
+"failed",
+function(e){
+
+addLog(
+"Call failed "+e.cause
+);
+
+
+});
+
+
+
+
+});
+
+
+ua.start();
+
+
+}
+
+
+
+
+
+// ==========================
+// MAKE CALL
+// ==========================
+
+
+function callUser()
+{
+
+
+let number =
+document.getElementById(
+"number"
+).value;
+
+
+
+if(!ua)
+{
+
+alert(
+"SIP not connected"
+);
+
+return;
+
+}
+
+
+
+let options={
+
+
+mediaConstraints:
+{
+
+audio:true,
+
+video:false
+
+},
+
+
+pcConfig:
+{
+
+iceServers:
+[
+
+{
+urls:
+"stun:stun.l.google.com:19302"
+}
+
+]
+
+}
+
+
+};
+
+
+
+session =
+ua.call(
+
+`sip:${number}@${FS_IP}`,
+
+options
+
+);
+
+
+
+document.getElementById(
+"hangup"
+).style.display="block";
+
+
+
+addLog(
+"Calling "+number
+);
+
+
+
+if(backend &&
+backend.readyState===1)
+{
+
+
+backend.send(
+JSON.stringify({
+
+action:"call",
+
+number:number
+
+})
+);
+
+
+}
+
+
+}
+
+
+
+
+
+// ==========================
+// HANGUP
+// ==========================
+
+
+function hangup()
+{
+
+
+if(session)
+{
+
+session.terminate();
+
+}
+
+
+document.getElementById(
+"hangup"
+).style.display="none";
+
+
+}
+
+
+
+
+// START
+
+window.onload=function(){
+
+
+if(typeof JsSIP==="undefined")
+{
+
+alert(
+"JsSIP failed loading"
+);
+
+return;
+
+}
+
+
+startSIP();
+
+
+};
+
+
+
+</script>
+
+
 </body>
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
-<script src="myfirst.js"></script>
->>>>>>> 17561dccf5d50847b954432ba6d80cb11cb19323
 </html>

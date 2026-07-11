@@ -1,82 +1,117 @@
 import asyncio
 import json
-import logging
 import websockets
-from greenswitch import InboundESL
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
+FS_HOST = "172.30.0.57"
+FS_PORT = 8021
+FS_PASSWORD = "cluecon"
 
-# Keep track of connected JavaScript browser clients
-CONNECTED_CLIENTS = set()
+WS_HOST = "0.0.0.0"
+WS_PORT = 8765
 
-# 1. FreeSWITCH Event Handler
-def fs_event_handler(event):
-    # This function runs whenever FreeSWITCH sends an event
-    event_name = event.headers.get('Event-Name')
-    print(f"Captured FreeSWITCH Event: {event_name}")
-    
-    # Prepare payload for JavaScript
-    payload = {
-        "event": event_name,
-        "uuid": event.headers.get('Unique-ID'),
-        "caller_number": event.headers.get('Caller-Caller-ID-Number'),
-        "callee_number": event.headers.get('Caller-Destination-Number')
-    }
-    
-    # Broadcast to all connected WebSocket clients
-    if CONNECTED_CLIENTS:
-        message = json.dumps(payload)
-        # Use asyncio safely from a synchronous background thread
-        asyncio.run_coroutine_threadsafe(broadcast(message), asyncio.get_event_loop())
+connected_browsers = set()
 
-async def broadcast(message):
-    for websocket in CONNECTED_CLIENTS.copy():
-        try:
-            await websocket.send(message)
-        except websockets.ConnectionClosed:
-            CONNECTED_CLIENTS.remove(websocket)
+# This is still None until a real audio stream is connected.
+fs_audio_writer = None
 
-# 2. WebSocket Server Handler
-async def socket_handler(websocket):
-    # Register client
-    CONNECTED_CLIENTS.add(websocket)
-    print(f"JavaScript client connected! Total clients: {len(CONNECTED_CLIENTS)}")
+
+async def send_esl_dial_command(destination):
+    global fs_audio_writer
+
+    try:
+        print(f"Connecting to FreeSWITCH {FS_HOST}:{FS_PORT}")
+
+        reader, writer = await asyncio.open_connection(FS_HOST, FS_PORT)
+
+        await reader.readuntil(b"\n\n")
+
+        writer.write(f"auth {FS_PASSWORD}\n\n".encode())
+        await writer.drain()
+
+        auth = await reader.readuntil(b"\n\n")
+
+        if b"+OK" not in auth:
+            print("Authentication failed")
+            writer.close()
+            await writer.wait_closed()
+            return False
+
+        print("Authenticated")
+
+        dial_command = (
+            f"api originate "
+            f"sofia/gateway/vikash/{destination} "
+            f"&park()\n\n"
+        )
+
+        print(dial_command)
+
+        writer.write(dial_command.encode())
+        await writer.drain()
+
+        response = await reader.readuntil(b"\n\n")
+
+        print(response.decode())
+
+        writer.close()
+        await writer.wait_closed()
+
+        return True
+
+    except Exception as e:
+        print("ESL Error:", e)
+        return False
+
+
+async def handle_browser(websocket):
+    global fs_audio_writer
+
+    print("Browser Connected")
+
+    connected_browsers.add(websocket)
+
     try:
         async for message in websocket:
-            # You can handle messages sent from JS here if needed
-            pass
+
+            if isinstance(message, bytes):
+
+                if (
+                    fs_audio_writer is not None
+                    and not fs_audio_writer.is_closing()
+                ):
+                    fs_audio_writer.write(message)
+                    await fs_audio_writer.drain()
+
+            elif isinstance(message, str):
+
+                try:
+                    data = json.loads(message)
+
+                    if data.get("action") == "originate_call":
+
+                        destination = data.get("destination")
+
+                        asyncio.create_task(
+                            send_esl_dial_command(destination)
+                        )
+
+                except json.JSONDecodeError:
+                    pass
+
     except websockets.ConnectionClosed:
-        pass
+        print("Browser disconnected")
+
     finally:
-        CONNECTED_CLIENTS.remove(websocket)
-        print("JavaScript client disconnected.")
+        connected_browsers.remove(websocket)
 
-# 3. Main Runner
+
 async def main():
-    # Your correct Linux FreeSWITCH IP address
-    FREESWITCH_IP = "172.30.0.57" 
-    
-    # Connected using lowercase password 'cluecon' to match your Linux server
-    esl = InboundESL(host=FREESWITCH_IP, port=8021, password="cluecon")
-    
-    try:
-        esl.connect()
-        # Request all events related to calls (CHANNEL_CREATE, CHANNEL_HANGUP, etc.)
-        esl.send("event plain CHANNEL_CREATE CHANNEL_HANGUP CHANNEL_ANSWER")
-        
-        # Start a background thread to register our event handler
-        esl.register_handle('*', fs_event_handler)
-        
-        print("Successfully connected to FreeSWITCH ESL!")
-    except Exception as e:
-        print(f"Could not connect to FreeSWITCH: {e}")
-        return
 
-    # Start the WebSocket server on your Windows machine (port 8765)
-    print("Starting WebSocket server on ws://0.0.0.0:8765...")
-    async with websockets.serve(socket_handler, "0.0.0.0", 8765):
-        await asyncio.Future() # run forever
+    print(f"WebSocket listening on ws://{WS_HOST}:{WS_PORT}")
+
+    async with websockets.serve(handle_browser, WS_HOST, WS_PORT):
+        await asyncio.Future()
+
 
 if __name__ == "__main__":
     asyncio.run(main())

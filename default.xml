@@ -1,0 +1,16 @@
+<extension name="play_my_voice_file">
+    <!-- This triggers when someone dials 9999 -->
+    <condition field="destination_number" expression="^9999$">
+        <!-- 1. Answer the line -->
+        <action application="answer"/>
+        
+        <!-- 2. Wait 1 second so audio doesn't clip -->
+        <action application="sleep" data="1000"/>
+        
+        <!-- 3. Play your voice file -->
+        <action application="playback" data="/usr/share/freeswitch/sounds/mypitch.wav"/>
+        
+        <!-- 4. Hang up when done -->
+        <action application="hangup"/>
+    </condition>
+</extension>
